@@ -3,37 +3,37 @@
 <head>
   <!--
     BRAND CONFIG — to rebrand, edit:
-      1) script.js  -> the BRAND object at the top (name, tagline, domain)
-      2) styles.css -> the "BRAND TOKENS" block at the top (colors, font)
+      1) script.js  -> BRAND object (name, tagline, domain, contact)
+      2) styles.css -> "BRAND TOKENS" block (colors, fonts)
       3) logo.svg / logo-dark.svg / favicon* / og-image.png
-      4) The <title>/meta tags below (search engines read these before JS runs)
+      4) The <title>/meta tags below, sitemap.xml, robots.txt
     See README.md.
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mirrova — Give them your Mirrova. Not your number.</title>
-  <meta name="description" content="Mirrova is a private messenger in development. No phone number or email required. Personas that show each person only the side of you that you choose, a Contact Firewall, and end-to-end encryption built on the open MLS standard.">
+  <title>Mirrova — Your conversations. Your choice.</title>
+  <meta name="description" content="Mirrova is a private messenger in development. A new approach to private communication, designed to put control back in your hands — no phone number required.">
   <meta name="theme-color" content="#FBF8F4" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#141217" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="Mirrova — Give them your Mirrova. Not your number.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mirrova.app/">
-  <meta property="og:site_name" content="Mirrova">
-  <meta property="og:image" content="https://mirrova.app/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mirrova — Give them your Mirrova. Not your number.">
-  <meta name="twitter:description" content="A private messenger. No phone number or email required.">
-  <meta name="twitter:image" content="https://mirrova.app/og-image.png">
   <link rel="canonical" href="https://mirrova.app/">
-  <meta property="og:description" content="A private messenger. No phone number or email required.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mirrova">
+  <meta property="og:url" content="https://mirrova.app/">
+  <meta property="og:title" content="Mirrova — Your conversations. Your choice.">
+  <meta property="og:description" content="A new approach to private communication, designed to put control back in your hands.">
+  <meta property="og:image" content="https://mirrova.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mirrova — Your conversations. Your choice.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mirrova — Your conversations. Your choice.">
+  <meta name="twitter:description" content="A new approach to private communication, designed to put control back in your hands.">
+  <meta name="twitter:image" content="https://mirrova.app/og-image.png">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
-  <script>
-    // Apply saved theme before paint (stored only in this browser).
-    (function(){document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('mirrova-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
-  </script>
+  <script>(function(){document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('mirrova-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -45,211 +45,217 @@
       <img class="logo-dark" src="logo-dark.svg" alt="" aria-hidden="true" width="200" height="56">
     </a>
     <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#how">How it works</a></li>
+      <li><a href="#preview">Preview</a></li>
+      <li><a href="#why">Why Mirrova</a></li>
+      <li><a href="#building">What we're building</a></li>
+      <li><a href="#principles">Principles</a></li>
       <li><a href="#status">Status</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-right">
       <button class="theme-btn" type="button" id="themeBtn" aria-label="Switch color theme">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
-      <a class="btn btn-primary btn-sm nav-cta" href="#waitlist">Join the beta</a>
+      <a class="btn btn-primary btn-sm nav-cta" href="#status">Coming soon</a>
     </div>
   </nav>
 </header>
 
 <main id="main">
 
-  <!-- HERO -->
+  <!-- 1 HERO -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Private beta · in development</span>
-        <h1 id="hero-title">Give them your&nbsp;<span data-brand="name">Mirrova</span>.<br><span class="accent" data-brand="tagline">Not your number.</span></h1>
-        <p class="sub">A private messenger. No phone number or email required.</p>
-        <p class="mirror-line">Like a mirror, each person sees only the side of you that you choose to show.</p>
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span>In development · Private messaging</span>
+        <h1 id="hero-title"><span class="serif">Your conversations.</span><br><span class="accent">Your choice.</span></h1>
+        <p class="sub" data-brand="tagline">A new approach to private communication, designed to put control back in your hands.</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
-          <a class="btn btn-ghost" href="#how">See how it works</a>
+          <a class="btn btn-primary" href="#status">Coming soon <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#preview">See the concept</a>
         </div>
-        <p class="hero-note">Android first. iOS planned.</p>
+        <p class="hero-note">Not yet publicly available. Android first, iOS planned.</p>
       </div>
 
       <div class="phone-stage" aria-hidden="true">
-        <div class="float-card fc1"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>End-to-end encrypted</div>
-        <div class="float-card fc2"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V10a7 7 0 0 1 14 0v11"/><circle cx="12" cy="14" r="2"/></svg></span>No number needed</div>
+        <div class="float-card fc1"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg></span>@username, not a number</div>
+        <div class="float-card fc2"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>Privacy by design</div>
         <div class="phone">
           <div class="screen">
             <div class="notch"></div>
-            <div class="persona-row">
-              <span class="chip">Work</span><span class="chip">Family</span><span class="chip on">Market</span><span class="chip">Dating</span>
-            </div>
+            <div class="persona-row"><span class="chip on">Personal</span><span class="chip">Work</span><span class="chip">Market</span></div>
             <div class="chat-head">
               <span class="avatar av3">S</span>
-              <div><b>Sam · bike buyer</b><small>Sees your Market side only</small></div>
+              <div><b>@sam.rides</b><small>Knows you as “Alex · Market”</small></div>
             </div>
             <div class="msgs">
               <div class="msg in">Hi! Is the bike still available?</div>
-              <div class="msg out">Yes, still here. Want to see it Saturday?</div>
+              <div class="msg out">Yes — want to see it Saturday?</div>
               <div class="msg in">Perfect. Morning works.</div>
-              <div class="msg out">Great, see you then 👋</div>
+              <div class="msg out typing"><i></i><i></i><i></i></div>
             </div>
             <div class="req">
               <div class="req-top">
                 <span class="shield"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span>
-                <div><b>Contact Firewall</b><span>Someone new wants to message you</span></div>
+                <div><b>New contact request</b><span>@jordan_k wants to connect</span></div>
               </div>
-              <div class="req-actions"><span>Ignore</span><span class="allow">Allow</span></div>
+              <div class="req-actions"><span>Decline</span><span class="allow">Accept</span></div>
             </div>
           </div>
         </div>
+        <span class="concept-tag">Concept preview</span>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="section" id="features" aria-labelledby="features-title">
+  <!-- 2 PRODUCT PREVIEW -->
+  <section class="section" id="preview" aria-labelledby="preview-title">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="kicker">Features</p>
-        <h2 id="features-title">Private by default. Easy by design.</h2>
-        <p>Mirrova keeps the complicated parts out of your way. You just chat.</p>
+        <p class="kicker">Product preview</p>
+        <h2 id="preview-title">Familiar to use. <span class="serif-i">Different underneath.</span></h2>
+        <p>A first look at the messaging experience we're designing. These are illustrative concepts, not screenshots of a finished app.</p>
       </div>
 
-      <div class="features">
-        <article class="card wide reveal">
-          <div>
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16.5" cy="9" r="3"/><path d="M2.5 19a5.5 5.5 0 0 1 11 0M11 19a5.5 5.5 0 0 1 11 0"/></svg></span>
-            <h3>Personas</h3>
-            <p>One you, many reflections. Keep work, family, dating and selling apart. Each persona is its own identity, designed to keep your personas separate, so each person sees only the side of you that you choose.</p>
+      <div class="preview-panel reveal">
+        <span class="concept-badge">Concept preview · Design in progress</span>
+        <figure class="pv-phone pv-left" aria-label="Concept: chat list">
+          <div class="pv-screen">
+            <div class="pv-status"><span>9:41</span><span class="pv-dots"></span></div>
+            <div class="pv-title"><b>Chats</b><span class="pv-search"></span></div>
+            <div class="pv-tabs"><span class="on">All</span><span>Personal</span><span>Work</span><span>Requests</span></div>
+            <ul class="pv-list">
+              <li><span class="avatar av2">M</span><div><b>Mia</b><small>See you at 7 🙂</small></div><em>9:38</em><i class="unread">2</i></li>
+              <li><span class="avatar av1">D</span><div><b>Design team</b><small>New mockups are up</small></div><em>9:12</em></li>
+              <li><span class="avatar av3">S</span><div><b>@sam.rides</b><small>Perfect. Morning works.</small></div><em>8:57</em></li>
+              <li><span class="avatar av4">J</span><div><b>Jordan</b><small>Request · waiting for you</small></div><em>Yest.</em></li>
+              <li><span class="avatar av5">N</span><div><b>Noor</b><small>Thanks for the recipe!</small></div><em>Mon</em></li>
+            </ul>
+            <span class="pv-fab"></span>
           </div>
-          <div class="persona-demo" aria-hidden="true">
-            <div class="pd"><span class="avatar av1">W</span><div><b>Work side</b><small>For colleagues and clients</small></div><svg class="lock" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-            <div class="pd"><span class="avatar av2">F</span><div><b>Family side</b><small>For the people you love</small></div><svg class="lock" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-            <div class="pd"><span class="avatar av4">D</span><div><b>Dating side</b><small>Until you're ready to share more</small></div><svg class="lock" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        </figure>
+        <figure class="pv-phone pv-right" aria-label="Concept: conversation">
+          <div class="pv-screen">
+            <div class="pv-status"><span>9:41</span><span class="pv-dots"></span></div>
+            <div class="pv-convo-head"><span class="avatar av2">M</span><div><b>Mia</b><small>Personal</small></div></div>
+            <div class="pv-day">Today</div>
+            <div class="msgs">
+              <div class="msg in">Are we still on for dinner?</div>
+              <div class="msg out">Yes! 7pm at the usual place?</div>
+              <div class="msg in">Perfect. I'll book a table.</div>
+              <div class="msg out">See you at 7 🙂</div>
+            </div>
+            <div class="pv-input"><span>Message</span><i></i></div>
           </div>
-        </article>
+        </figure>
+      </div>
+    </div>
+  </section>
 
+  <!-- 3 WHY -->
+  <section class="section philosophy" id="why" aria-labelledby="why-title">
+    <div class="wrap phil-grid">
+      <div class="reveal">
+        <p class="kicker">Why Mirrova</p>
+        <h2 id="why-title" class="serif-h">You shouldn't have to hand over your identity <em>just to say hello.</em></h2>
+      </div>
+      <div class="reveal phil-copy">
+        <p>Most messaging apps start by asking for your phone number. That number follows you everywhere. It links your accounts, reveals more than you intended and stays with every person you've ever messaged.</p>
+        <p>We believe people should be able to communicate without having to share their phone number or personal identity. You decide who reaches you, and how much of yourself each person sees.</p>
+        <p class="sig">Privacy is not a feature. It's the starting point.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 BUILDING -->
+  <section class="section" id="building" aria-labelledby="building-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">What we're building</p>
+        <h2 id="building-title">Built around people, not phone numbers.</h2>
+      </div>
+      <div class="features three">
         <article class="card reveal">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-          <h3>Contact Firewall</h3>
-          <p>Strangers can't reach you unless you let them in. Like a doorman for your inbox.</p>
-          <div class="fw" aria-hidden="true">
-            <div>People you invited <em class="yes">Allowed</em></div>
-            <div>Unknown sender <em class="wait">Waiting at the door</em></div>
-          </div>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg></span>
+          <h3>Username-based connections</h3>
+          <p>Connect with a username, a link or a QR code. No phone number or email is needed to get started.</p>
         </article>
-
         <article class="card reveal">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M3 3l18 18"/></svg></span>
-          <h3>No number. No email.</h3>
-          <p>Sign up without a phone number or an email address. Nothing to leak, nothing to look up.</p>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span>
+          <h3>Private conversations</h3>
+          <p>Conversations are designed with end-to-end encryption, built on the open MLS standard (RFC 9420) using OpenMLS.</p>
         </article>
-
         <article class="card reveal">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-          <h3>End-to-end encrypted</h3>
-          <p>Built on MLS (RFC 9420), the open messaging security standard from the IETF, using the OpenMLS library.</p>
-        </article>
-
-        <article class="card reveal">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></span>
-          <h3>Private notifications</h3>
-          <p>Designed so your lock screen can hide who wrote and what they said. Notification privacy options are being built for the beta.</p>
-        </article>
-
-        <article class="card muted strip reveal">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <div><h3>Disposable personas <span class="badge">Coming later</span></h3>
-          <p>A persona for one deal or one date. When it's done, let it go.</p></div>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16.5" cy="9" r="3"/><path d="M2.5 19a5.5 5.5 0 0 1 11 0M11 19a5.5 5.5 0 0 1 11 0"/></svg></span>
+          <h3>Relationship-based identity</h3>
+          <p>Show colleagues, friends and new contacts a different side of you. Each relationship gets the identity you choose for it.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section steps-bg" id="how" aria-labelledby="how-title">
+  <!-- 5 PRINCIPLES -->
+  <section class="section steps-bg" id="principles" aria-labelledby="principles-title">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="kicker">How it works</p>
-        <h2 id="how-title">Three steps. No paperwork.</h2>
+        <p class="kicker">Privacy &amp; security philosophy</p>
+        <h2 id="principles-title">Principles we design by.</h2>
+        <p>These are the commitments that guide our work. They describe our goals, not a finished or independently verified product.</p>
       </div>
-      <ol class="steps" role="list" style="list-style:none;margin:0;padding:0">
-        <li class="step reveal">
-          <span class="num" aria-hidden="true">1</span>
-          <h3>Create your <span data-brand="name">Mirrova</span></h3>
-          <p>Open the app and pick a name. No phone number, no email, no forms.</p>
-        </li>
-        <li class="step reveal">
-          <span class="num" aria-hidden="true">2</span>
-          <h3>Share a side of you</h3>
-          <p>Show a QR code or send a link. Choose which persona they get.</p>
-        </li>
-        <li class="step reveal">
-          <span class="num" aria-hidden="true">3</span>
-          <h3>Chat privately</h3>
-          <p>Messages are end-to-end encrypted. Only the people in the chat can read them.</p>
-        </li>
+      <ol class="principles" role="list">
+        <li class="reveal"><span class="num">01</span><h3>Collect as little as possible</h3><p>If we don't need a piece of data, we aim not to ask for it.</p></li>
+        <li class="reveal"><span class="num">02</span><h3>Open standards over secret ones</h3><p>We build on published, peer-reviewed protocols rather than inventing our own cryptography.</p></li>
+        <li class="reveal"><span class="num">03</span><h3>You control who reaches you</h3><p>New contacts ask first. Nothing lands in your inbox until you accept.</p></li>
+        <li class="reveal"><span class="num">04</span><h3>Honest about limits</h3><p>No app can protect against every threat. We'll describe what Mirrova does and doesn't protect clearly, and we plan an independent security review before public launch.</p></li>
       </ol>
     </div>
   </section>
 
-  <!-- STATUS -->
+  <!-- 6 STATUS -->
   <section class="section" id="status" aria-labelledby="status-title">
     <div class="wrap status">
       <div class="reveal">
-        <p class="kicker">Where we are</p>
-        <h2 id="status-title">Honest status.</h2>
-        <p class="section-head" style="margin:16px 0 0;color:var(--ink-2);font-size:19px">Private beta coming. Android first, iOS planned.</p>
-        <p class="honest">Mirrova is not in any app store yet. We'll only make security claims we can back up, and we'll share what changes as we go.</p>
+        <p class="kicker">Development status</p>
+        <h2 id="status-title">Coming soon.</h2>
+        <p class="lead-2">Mirrova is under active development and is not publicly available yet.</p>
+        <p class="honest">There's nothing to download yet, and we're not collecting sign-ups on this site. When there's something to try, we'll share it here.</p>
       </div>
       <ul class="status-list reveal">
-        <li><span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h3l3-8 4 16 3-8h3"/></svg></span><div><b>In active development</b><span>Mirrova is being built and tested every day.</span></div></li>
-        <li><span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div><b>Internal red-team testing</b><span>We actively hunt for security issues in Mirrova, and fix what we find.</span></div></li>
-        <li><span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span><div><b>Independent audit planned</b><span>An outside security audit is planned before public launch.</span></div></li>
-        <li><span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg></span><div><b>Android first</b><span>A small private beta on Android comes first. iOS is planned.</span></div></li>
+        <li><span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h3l3-8 4 16 3-8h3"/></svg></span><div><b>In active development</b><span>Core messaging and identity features are being built.</span></div></li>
+        <li><span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg></span><div><b>Android first</b><span>Android is the first platform in development. iOS is planned.</span></div></li>
+        <li><span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span><div><b>Independent review planned</b><span>We plan an outside security review before public launch.</span></div></li>
       </ul>
     </div>
   </section>
 
-  <!-- WAITLIST -->
-  <section class="section" id="waitlist" aria-labelledby="waitlist-title" style="padding-top:24px">
-    <div class="wrap">
-      <div class="waitlist reveal">
-        <p class="kicker" style="color:#FFB58E">Private beta</p>
-        <h2 id="waitlist-title">Be one of the first to try <span data-brand="name">Mirrova</span>.</h2>
-        <p class="lead">Join the waitlist and we'll let you know when the beta opens. (No backend yet: this is a demo form.)</p>
-        <!--
-          TODO(waitlist): No backend yet. This form does not send data anywhere.
-          Wire it to a self-hosted / privacy-respecting endpoint later (no third-party trackers).
-          Remember: only collect the email, explain retention in the Privacy page, and allow removal.
-        -->
-        <form class="form" id="waitlistForm" novalidate>
-          <label class="sr-only" for="email">Email address</label>
-          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-          <button class="btn btn-primary" type="submit">Join waitlist</button>
-        </form>
-        <p class="form-note">Demo form. Nothing is sent or stored yet.</p>
-        <p class="thanks" id="thanks" role="status" aria-live="polite"></p>
+  <!-- 7 FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-title" style="padding-top:24px">
+    <div class="wrap faq-wrap">
+      <div class="section-head reveal">
+        <p class="kicker">FAQ</p>
+        <h2 id="faq-title">Questions, answered honestly.</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>When will Mirrova be available?</summary><p>Mirrova is under active development and isn't publicly available yet. We don't have a release date to share, and we'll post updates on this site.</p></details>
+        <details><summary>Do I need a phone number?</summary><p>No. Mirrova is designed so you can sign up and connect with a username instead of a phone number or email address.</p></details>
+        <details><summary>How does Mirrova approach privacy?</summary><p>We aim to collect as little data as possible and to give you control over who can reach you and which identity each person sees. Our privacy policy is still a draft and will be finalized before launch.</p></details>
+        <details><summary>Is it end-to-end encrypted?</summary><p>End-to-end encryption is a core part of the architecture we're building, based on the open MLS standard (RFC 9420) and the OpenMLS library. It's still under development and hasn't been independently reviewed yet. We plan a review before public launch.</p></details>
+        <details><summary>Which platforms will it support?</summary><p>Android is the first platform in development. We plan to add iOS after that.</p></details>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="site-footer" style="margin-top:0">
+<footer class="site-footer">
   <div class="wrap">
     <div class="foot">
       <a href="#top" aria-label="Back to top"><img class="logo-light" src="logo.svg" alt="Mirrova" width="200" height="56"><img class="logo-dark" src="logo-dark.svg" alt="" aria-hidden="true" width="200" height="56"></a>
-      <!-- TODO: replace placeholder links with real pages / URLs -->
       <ul class="foot-links">
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="https://mirrova.app/" data-brand="domain-link">mirrova.app</a></li>
+        <li><span class="muted-link" data-brand="contact">Contact: coming soon</span></li>
       </ul>
     </div>
-    <p class="copy">© <span data-brand="year">2026</span> <span data-brand="name">Mirrova</span>. All rights reserved.</p>
+    <p class="copy">© <span data-brand="year">2026</span> <span data-brand="name">Mirrova</span>. All rights reserved. This site uses no cookies, analytics or trackers.</p>
   </div>
 </footer>
 

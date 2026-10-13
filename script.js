@@ -1,7 +1,9 @@
 // ===== BRAND CONFIG (edit here to rebrand) =====
 var BRAND = {
   name: 'Mirrova',
-  tagline: 'Not your number.',
+  headline: 'Your conversations. Your choice.',
+  tagline: 'A new approach to private communication, designed to put control back in your hands.',
+  contact: '', // e.g. 'hello@mirrova.app' — leave empty to show 'Contact: coming soon'
   domain: 'mirrova.app',
   themeKey: 'mirrova-theme' // localStorage key for the theme toggle
 };
@@ -11,6 +13,7 @@ var BRAND = {
   var root = document.documentElement;
   function fill(k, v) { document.querySelectorAll('[data-brand="' + k + '"]').forEach(function (el) { el.textContent = v; }); }
   fill('name', BRAND.name); fill('tagline', BRAND.tagline); fill('year', String(new Date().getFullYear()));
+  if (BRAND.contact) document.querySelectorAll('[data-brand="contact"]').forEach(function (el) { el.innerHTML = ''; var a = document.createElement('a'); a.href = 'mailto:' + BRAND.contact; a.textContent = BRAND.contact; el.appendChild(a); });
   document.querySelectorAll('[data-brand="domain-link"]').forEach(function (a) { a.textContent = BRAND.domain; a.href = 'https://' + BRAND.domain + '/'; });
 
   // Theme toggle (remembered in localStorage on this device only)
@@ -40,18 +43,4 @@ var BRAND = {
     els.forEach(function (el) { io.observe(el); });
   } else { els.forEach(function (el) { el.classList.add('in'); }); }
 
-  // Waitlist demo — TODO: wire to a real backend. Nothing is sent anywhere.
-  var form = document.getElementById('waitlistForm');
-  var thanks = document.getElementById('thanks');
-  var email = document.getElementById('email');
-  if (form) form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    if (!email.value || !email.checkValidity()) {
-      thanks.textContent = 'Please enter a valid email address.';
-      email.focus();
-      return;
-    }
-    thanks.textContent = "Thanks! You're on the list. (demo — nothing was sent)";
-    form.reset();
-  });
 })();
