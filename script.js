@@ -13,7 +13,7 @@ var BRAND = {
   var root = document.documentElement;
   function fill(k, v) { document.querySelectorAll('[data-brand="' + k + '"]').forEach(function (el) { el.textContent = v; }); }
   fill('name', BRAND.name); fill('tagline', BRAND.tagline); fill('year', String(new Date().getFullYear()));
-  if (BRAND.contact) document.querySelectorAll('[data-brand="contact"]').forEach(function (el) { el.textContent = 'Questions about Mirrova? Contact '; var a = document.createElement('a'); a.href = 'mailto:' + BRAND.contact; a.textContent = BRAND.contact; el.appendChild(a); });
+  if (BRAND.contact) document.querySelectorAll('[data-brand="contact"]').forEach(function (el) { el.innerHTML = '<strong>Questions about Mirrova?</strong><br>Contact us at '; var a = document.createElement('a'); a.href = 'mailto:' + BRAND.contact; a.textContent = BRAND.contact; el.appendChild(a); });
   document.querySelectorAll('[data-brand="domain-link"]').forEach(function (a) { a.textContent = BRAND.domain; a.href = 'https://' + BRAND.domain + '/'; });
 
   // Theme toggle (remembered in localStorage on this device only)
