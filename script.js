@@ -2,7 +2,7 @@
 var BRAND = {
   name: 'Mirrova',
   headline: 'Your conversations. Your choice.',
-  tagline: 'A new approach to private communication, designed to put control back in your hands.',
+  tagline: 'A private messenger in development, designed around username connections, relationship-based identities and control over who can contact you.',
   contact: '', // e.g. 'hello@mirrova.app' — leave empty to show 'Contact: coming soon'
   domain: 'mirrova.app',
   themeKey: 'mirrova-theme' // localStorage key for the theme toggle
