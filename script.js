@@ -3,7 +3,7 @@ var BRAND = {
   name: 'Mirrova',
   headline: 'Your conversations. Your choice.',
   tagline: 'A private messenger in development, designed around username connections, relationship-based identities and control over who can contact you.',
-  contact: '', // e.g. 'hello@mirrova.app' — leave empty to show 'Contact: coming soon'
+  contact: 'hello@mirrova.app', // e.g. 'hello@mirrova.app' — leave empty to show 'Contact: coming soon'
   domain: 'mirrova.app',
   themeKey: 'mirrova-theme' // localStorage key for the theme toggle
 };
@@ -13,7 +13,7 @@ var BRAND = {
   var root = document.documentElement;
   function fill(k, v) { document.querySelectorAll('[data-brand="' + k + '"]').forEach(function (el) { el.textContent = v; }); }
   fill('name', BRAND.name); fill('tagline', BRAND.tagline); fill('year', String(new Date().getFullYear()));
-  if (BRAND.contact) document.querySelectorAll('[data-brand="contact"]').forEach(function (el) { el.innerHTML = ''; var a = document.createElement('a'); a.href = 'mailto:' + BRAND.contact; a.textContent = BRAND.contact; el.appendChild(a); });
+  if (BRAND.contact) document.querySelectorAll('[data-brand="contact"]').forEach(function (el) { el.textContent = 'Questions about Mirrova? Contact '; var a = document.createElement('a'); a.href = 'mailto:' + BRAND.contact; a.textContent = BRAND.contact; el.appendChild(a); });
   document.querySelectorAll('[data-brand="domain-link"]').forEach(function (a) { a.textContent = BRAND.domain; a.href = 'https://' + BRAND.domain + '/'; });
 
   // Theme toggle (remembered in localStorage on this device only)
